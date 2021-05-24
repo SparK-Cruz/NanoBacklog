@@ -5,10 +5,10 @@ from types import SimpleNamespace
 import datetime
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
-@app.route("/")
+@app.route('/')
 def index():
-
     data = requests.get('https://nanoticker.info/json/stats.json').text
     x = json.loads(data, object_hook=lambda d: SimpleNamespace(**d))
 
@@ -25,7 +25,6 @@ def index():
     minutes = ((total_seconds - (days * 24 * 60 * 60)) % 3600) // 60
     seconds = total_seconds % 60
     
-
     body = """
     <html>
         <head>
@@ -56,6 +55,3 @@ def index():
         sec=seconds)
 
     return body
-
-if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8080, debug=True)
