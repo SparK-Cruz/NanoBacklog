@@ -4,13 +4,15 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <meta http-equiv="refresh" content="5" >
+    <meta http-equiv="refresh" content="5">
     <title>Nano Backlog</title>
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/materialize.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{{ url_for('static', filename='css/materialize.css') }}" type="text/css" rel="stylesheet"
+        media="screen,projection" />
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet"
+        media="screen,projection" />
 </head>
 
 <body>
@@ -23,7 +25,12 @@
             Current Backlog (Median): {{ backlog }}<br><br>
 
             <h4>With the current rates, the backlog will be cleared in:</h4>
-            <h1>{{ days }} days, {{ hours }} hours, {{ min }} min and {{ sec }} sec.</h1>
+            <h1>
+                {{ days }} days<br>
+                {{ hours }} hours<br>
+                {{ min }} min<br>
+                {{ sec }} sec
+            </h1>
             <br><br><br>
             <p>Data from <a href="https://nanoticker.info">nanoticker.info</a> </p>
             <p>Repository on <a href="https://github.com/JulianSchmidtke/NanoBacklog">GitHub</a></p>
