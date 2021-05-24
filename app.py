@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import requests
 import json
 from types import SimpleNamespace
@@ -25,33 +25,16 @@ def index():
     minutes = ((total_seconds - (days * 24 * 60 * 60)) % 3600) // 60
     seconds = total_seconds % 60
     
-    body = """
-    <html>
-        <head>
-            <title>Nano Backlog</title>
-        </head>
-        <body>
-            <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
-                <main class="mdl-layout__content">
-                    <div class = "page-content">
-                        Current Bps (Median): {bps:.2f}<br>
-                        Current Cps (Median): {cps:.2f}<br>
-                        Current Backlog (Median): {backlog}<br>
-
-                        With the current rates, the backlog will be cleared in: <br>
-                        <h1>{days} days, {hours:.0f} hours, {min:.0f} min, {sec:.0f} sec</h1>
-                    </div>
-                </main>
-            </div>
-        </body>
-    </html>
-    """.format(
-        bps=bps, 
-        cps=cps, 
+    return render_template(
+        'index.html',
+        bps=format(bps, '.2f'), 
+        cps=format(cps, '.2f'), 
         backlog=backlog, 
-        days=days, 
-        hours=hours, 
-        min=minutes, 
-        sec=seconds)
+        days=format(days, '.0f'), 
+        hours=format(hours, '.0f'), 
+        min=format(minutes, '.0f'), 
+        sec=format(seconds, '.0f')
+    )
 
-    return body
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", port=8080, debug=True) 

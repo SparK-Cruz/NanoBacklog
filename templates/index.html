@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Nano Backlog</title>
+</head>
+<body>
+    <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                Current Bps (Median): {{ bps }}<br>
+                Current Cps (Median): {{ cps }}<br>
+                Current Backlog (Median): {{ backlog }}<br>
+
+                With the current rates, the backlog will be cleared in: <br>
+                <h1>{{ days }} days, {{ hours }} hours, {{ min }} min, {{ sec }} sec</h1>
+                <br><br><br>
+                <p>Data from <a href ="https://nanoticker.info">nanoticker.info</a> </p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
