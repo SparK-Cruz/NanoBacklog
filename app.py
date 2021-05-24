@@ -16,7 +16,7 @@ def index():
     cps = x.CPSMedian
     backlog = x.blockCountMedian - x.cementedMedian
 
-    seconds_remaining = (backlog / cps)
+    seconds_remaining = (backlog / (cps-bps))
     timedelta_obj = datetime.timedelta(seconds=seconds_remaining)
 
     days = timedelta_obj.days
@@ -29,7 +29,7 @@ def index():
         'index.html',
         bps=format(bps, '.2f'), 
         cps=format(cps, '.2f'), 
-        backlog=backlog, 
+        backlog=format(backlog, ','),
         days=format(days, '.0f'), 
         hours=format(hours, '.0f'), 
         min=format(minutes, '.0f'), 

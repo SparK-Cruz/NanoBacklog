@@ -1,21 +1,38 @@
-<html>
-<head>
-    <title>Nano Backlog</title>
-</head>
-<body>
-    <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
-        <main class="mdl-layout__content">
-            <div class="page-content">
-                Current Bps (Median): {{ bps }}<br>
-                Current Cps (Median): {{ cps }}<br>
-                Current Backlog (Median): {{ backlog }}<br>
+<!DOCTYPE html>
+<html lang="en">
 
-                With the current rates, the backlog will be cleared in: <br>
-                <h1>{{ days }} days, {{ hours }} hours, {{ min }} min, {{ sec }} sec</h1>
-                <br><br><br>
-                <p>Data from <a href ="https://nanoticker.info">nanoticker.info</a> </p>
-            </div>
-        </main>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <meta http-equiv="refresh" content="5" >
+    <title>Nano Backlog</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/materialize.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+    <div class="container">
+        <br><br>
+        <h1 class="header center green-text">Nano Backlog</h1>
+        <div class="row center">
+            Current Bps (Median): {{ bps }}<br>
+            Current Cps (Median): {{ cps }}<br>
+            Current Backlog (Median): {{ backlog }}<br><br>
+
+            <h4>With the current rates, the backlog will be cleared in:</h4>
+            <h1>{{ days }} days, {{ hours }} hours, {{ min }} min and {{ sec }} sec.</h1>
+            <br><br><br>
+            <p>Data from <a href="https://nanoticker.info">nanoticker.info</a> </p>
+        </div>
     </div>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
 </body>
+
 </html>
