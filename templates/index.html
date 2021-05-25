@@ -32,7 +32,13 @@
                 {{ sec }} sec
             </h1>
             Please keep in mind that the cps and bps are constantly changing and the date can vary a lot.
-            <br><br><br>
+            <br><br>
+            {% if days == "0" %}
+                <iframe src="https://giphy.com/embed/QMkPpxPDYY0fu" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            {% elif days == "1" or days == "2" %}
+                <iframe src="https://giphy.com/embed/8vsXFLQclIk9pzy3NU" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            {% endif %}
+            <br><br>
             <p>Data from <a href="https://nanoticker.info">nanoticker.info</a> </p>
             <p>Repository on <a href="https://github.com/JulianSchmidtke/NanoBacklog">GitHub</a></p>
             <p>
