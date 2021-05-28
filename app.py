@@ -43,7 +43,7 @@ def get_data():
         "cps": current_cps
     }
 
-    data_path = '/home/data.json'
+    data_path = './data.json'
 
     # create file if not exists
     if os.path.exists(data_path):

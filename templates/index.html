@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="refresh" content="60">
     <title>Nano Backlog</title>
 
     <!-- CSS  -->
@@ -20,8 +20,8 @@
         <br><br>
         <h1 class="header center green-text">Nano Backlog</h1>
         <div class="row center">
-            Blocks per Second (Mean of past 60 min): {{ bps }}<br>
-            Confirmations per Second (Mean of past 60 min): {{ cps }}<br>
+            Blocks per Second (60min avg): {{ bps }}<br>
+            Confirmations per Second (60min avg): {{ cps }}<br>
             Current Backlog: {{ backlog }}<br><br>
 
             <h4>With the current rates, the backlog will be cleared in:</h4>
@@ -42,8 +42,10 @@
             <p>Data from <a href="https://nanoticker.info">nanoticker.info</a> </p>
             <p>Repository on <a href="https://github.com/JulianSchmidtke/NanoBacklog">GitHub</a></p>
             <p>
-                Feel free to tip<br>
-                nano_3fbjgita77m86bt1ctyuzjxm1u4zidson4oi75c3etaidox3n4dcmbf1teht
+                <a class="d-block" href="nano:nano_3fbjgita77m86bt1ctyuzjxm1u4zidson4oi75c3etaidox3n4dcmbf1teht">
+                    <img src="data:image/png;base64,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" style="width: 60px;">
+                </a><br>
+                Feel free to <a href="https://nanocrawler.cc/explorer/account/nano_3fbjgita77m86bt1ctyuzjxm1u4zidson4oi75c3etaidox3n4dcmbf1teht/">Tip</a>
             </p>
         </div>
     </div>
