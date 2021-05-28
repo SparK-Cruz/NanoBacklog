@@ -1,0 +1,14 @@
+html.dark { 
+
+    background-color: #000d1a ;
+    color: #d1d1d1 ;
+}
+
+html.dark ::selection {
+    color: #000 ;
+    background-color: #CF7 ;
+}
+
+html.dark a {
+    color: #4fbcff ;
+}

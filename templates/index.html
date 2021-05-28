@@ -13,6 +13,9 @@
         media="screen,projection" />
     <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet"
         media="screen,projection" />
+    <link href="{{ url_for('static', filename='css/dark.css') }}" type="text/css" rel="stylesheet"
+        media="screen,projection" />
+    <script type="text/javascript" src="{{ url_for('static', filename='js/theme.js') }}"></script>
 </head>
 
 <body>
@@ -39,6 +42,8 @@
                 <iframe src="https://giphy.com/embed/8vsXFLQclIk9pzy3NU" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
             {% endif %}
             <br><br>
+            <a href="#" id="dark-mode">Toggle dark mode</a>
+            <br>
             <p>Data from <a href="https://nanoticker.info">nanoticker.info</a> </p>
             <p>Repository on <a href="https://github.com/JulianSchmidtke/NanoBacklog">GitHub</a></p>
             <p>
